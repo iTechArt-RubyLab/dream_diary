@@ -48,8 +48,8 @@ gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'faker', '~> 3.1', '>= 3.1.1'
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
 end
 
 group :development do
