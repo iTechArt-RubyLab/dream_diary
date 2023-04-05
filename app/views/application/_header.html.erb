@@ -16,10 +16,10 @@
             <li class="nav-item">
               <% if user_signed_in? %>
                 <span><%= current_user.email %></span>
-                  <%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete } %>
-                <% else %>
-                  <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'Sign up', new_user_registration_path %>
-                <% end %>
+                <%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete } %>
+              <% else %>
+                <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'Sign up', new_user_registration_path %>
+              <% end %>
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
@@ -49,7 +49,3 @@
   </nav>
   <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"></svg>
 </div> 
-
-
-
-
