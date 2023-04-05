@@ -1,10 +1,9 @@
-<%= image_tag('gif', width: 100, height: 100, class: "rounded") %>
 <div class="container">
   <div class="page-header">
     <h1>Dreams</h1>
     <ul class="list-group list-group-flush">
       <% @dreams.each do |dream| %>
-        <li class="list-group-item"> <%= dream.title %> </li>
+        <a class="list-group-item list-group-item-action list-group-item-dark"> <%= dream.title %> </a>
         <%= image_tag(dream.image, width: 300, height: 300, class: "rounded") %>
       <% end %>
     </ul>
