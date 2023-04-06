@@ -1,9 +1,11 @@
-<% if user_signed_in? %>
-    <span><%= current_user.email %></span>
-    <%= link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete } %>
-<% else %>
-    <%= link_to 'Log in', new_user_session_path %> or <%= link_to 'Sign up', new_user_registration_path %>
-<% end %>
-<% @dreams.each do |dream| %>
-  <%= dream.title %>
-<% end %>
+<div class="container">
+  <div class="page-header">
+    <h1>Dreams</h1>
+    <ul class="list-group list-group-flush">
+      <% @dreams.each do |dream| %>
+        <a class="list-group-item list-group-item-action list-group-item-dark"> <%= dream.title %> </a>
+        <%= image_tag(dream.image, width: 300, height: 300, class: "rounded") %>
+      <% end %>
+    </ul>
+  </div>
+</div>
