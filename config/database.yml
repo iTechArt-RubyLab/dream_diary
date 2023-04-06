@@ -13,6 +13,4 @@ test:
 
 production:
   <<: *default
-  database: dream_diary_production
-  username: dream_diary
-  password: <%= ENV["DREAM_DIARY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
