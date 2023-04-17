@@ -5,9 +5,7 @@ class CategoriesController < ApplicationController
     @categories = Category.active
   end
 
-  def show
-    
-  end
+  def show; end
 
   private
 
