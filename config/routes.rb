@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :dreams
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  root 'categories#index'
 
-  root 'dreams#index'
+  resources :categories do
+    resources :dreams
+  end
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end
