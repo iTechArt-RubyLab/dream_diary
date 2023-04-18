@@ -1,10 +1,10 @@
 <h1> <%= @dream.title %> </h1>
 <% @comments.each do |comment| %>
-  <div class="card mb-3">
+  <div class="card mb-1">
     <div class="card-body">
       <h5 class="card-title"><%= comment.user.email %></h5>
       <p class="card-text"><%= comment.body %></p>
-      <%= render partial: 'subcomments', locals: { comment: comment } %>
     </div>
+    <%= render partial: 'subcomments', locals: { comment: comment } %>
   </div>
 <% end %>
