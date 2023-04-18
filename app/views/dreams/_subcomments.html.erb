@@ -1,0 +1,13 @@
+<% if comment.subcomments.any? %>
+  <div class="ml-3">
+    <% comment.subcomments.each do |subcomment| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= subcomment.user.email %></h5>
+          <p class="card-text"><%= subcomment.body %></p>
+          <%= render partial: 'subcomments', locals: { comment: subcomment } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
