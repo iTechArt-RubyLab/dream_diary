@@ -1,0 +1,14 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <% @category.dreams.includes(:user).each do |dream| %>
+      <div class="d-flex">
+        <div class="p-2 w-100">
+          <%= link_to image_tag(dream.image, width: 150, height: 150, class: "rounded"), category_dream_path(@category, dream) %>
+        </div>
+        <div class="p-2 flex-shrink-1">
+          <%= link_to 'Del', category_dream_path(@category, dream), class: 'btn btn-danger', data: { turbo_method: :delete } if can? :destroy, dream %>
+        </div>
+      </div>
+    <% end %>
+  </li>
+</ul>

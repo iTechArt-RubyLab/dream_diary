@@ -1,0 +1,4 @@
+<% @categories.each do |category| %>
+  <%= link_to image_tag(category.image, width: 150, height: 150, class: "rounded"), category_path(category) %>
+  <%= category.dreams_count %>
+<% end %>
