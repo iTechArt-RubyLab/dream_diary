@@ -1,3 +1,6 @@
+<% content_for :title do %>
+  <%= @dream.title %>
+<% end %>
 <h1> <%= @dream.title %> </h1>
 <% @comments.each do |comment| %>
   <div class="card mb-1">
