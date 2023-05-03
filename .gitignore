@@ -36,3 +36,4 @@
 coverage/*
 
 gcs.keyfile
+dump.rdb
