@@ -30,8 +30,8 @@ gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 gem 'sidekiq', '~> 7.0', '>= 7.0.7'
 gem 'simple_form', '~> 5.2'
 
-gem 'image_processing', '>= 1.2'
 gem 'google-cloud-storage', '~> 1.44', require: false
+gem 'image_processing', '>= 1.2'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
