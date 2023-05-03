@@ -1,3 +1,3 @@
 good_night:
-  cron: "*/30 * * * * *"
+  cron: '0 22 * * *'
   class: 'GoodNightJob'
