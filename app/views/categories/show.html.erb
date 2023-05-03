@@ -3,7 +3,7 @@
     <% @category.dreams.includes(:user).each do |dream| %>
       <div class="d-flex">
         <div class="p-2 w-100">
-          <%= link_to image_tag(dream.image, width: 150, height: 150, class: "rounded"), dream_path(dream) %>
+          <%= link_to dream.title, dream_path(dream) %>
         </div>
       </div>
     <% end %>

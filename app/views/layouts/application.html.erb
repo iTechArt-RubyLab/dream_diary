@@ -19,8 +19,12 @@
 
   <%= content_tag :body do %>
     <%= render 'header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="bg-light p-3 mb-2 text-dark">
+        <%= yield %>
+      </div>
+    </div>
   <% end %>
 </html>
