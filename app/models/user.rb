@@ -1,9 +1,11 @@
 class User < ApplicationRecord
   has_many :dreams, dependent: :destroy
-  has_one_attached :avatar
+  has_one_attached :avatar, dependent: :destroy
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :validatable, :confirmable,
          omniauth_providers: %i[google_oauth2]
+
+  AVATAR = Mime::LOOKUP.keys.keep_if { |v| v =~ /image/ }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|

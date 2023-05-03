@@ -4,6 +4,8 @@
   wrapper: :horizontal_form do |f| %>
   <%= f.error_notification %>
 
+  <%= f.input :name,
+              required: true %>
   <%= f.input :email,
               required: true,
               autofocus: true,
@@ -15,6 +17,7 @@
   <%= f.input :password_confirmation,
               required: true,
               input_html: { autocomplete: "new-password" } %>
+  <%= f.input :avatar, as: :file, input_html: { accept: User::AVATAR } %>
 
   <div class="row mb-0">
     <div class="col-sm-9 offset-sm-3">
