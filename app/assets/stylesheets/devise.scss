@@ -1,0 +1,16 @@
+@import "bootstrap";
+
+.devise-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}

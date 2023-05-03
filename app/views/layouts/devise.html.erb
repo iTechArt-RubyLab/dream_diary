@@ -13,7 +13,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "devise", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -21,10 +21,8 @@
     <%= render 'header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
-      <div class='container p-5 bg-light'>
+      <div class='devise-container'>
         <%= yield %>
       </div>
-    </div>
   <% end %>
 </html>
