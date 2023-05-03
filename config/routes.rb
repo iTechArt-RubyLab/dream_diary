@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   root 'categories#index'
 
-  resources :categories, only: %i[index show] do
-    resources :dreams, only: %i[show destroy]
-  end
+  resources :categories, only: %i[index show]
+  resources :dreams
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
+                                    registrations: 'users/registrations' }
 end

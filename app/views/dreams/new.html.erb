@@ -1,0 +1,9 @@
+<%= simple_form_for @dream do |f| %>
+  <div>
+    <%= f.association :category %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :image, as: :file, input_html: { accept: User::AVATAR } %>
+    <%= f.button :submit %>
+  </div>
+<% end %>
