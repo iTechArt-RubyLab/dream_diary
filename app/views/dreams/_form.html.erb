@@ -1,0 +1,12 @@
+<%= simple_form_for @dream do |f| %>
+  <div>
+    <%= f.input :date %>
+    <%= f.input :duration, as: :range, input_html: { min: 0, max: 24, step: 1, value: 8 }, wrapper_html: { class: 'range-field' } %>
+    <%= f.association :category %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :image, as: :file, input_html: { accept: User::AVATAR } %>
+    <%= f.input :tags, as: :check_boxes, collection: %i[a b c], wrapper: :vertical_collection_inline %>
+    <%= f.button :submit %>
+  </div>
+<% end %>

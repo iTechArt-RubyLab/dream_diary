@@ -28,7 +28,13 @@ gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'cancancan', '~> 3.5'
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 gem 'sidekiq', '~> 7.0', '>= 7.0.7'
+gem 'sidekiq-cron', '~> 1.10'
 gem 'simple_form', '~> 5.2'
+
+gem 'google-cloud-storage', '~> 1.44', require: false
+gem 'image_processing', '>= 1.2'
+
+gem 'date_validator', '~> 0.12.0'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]

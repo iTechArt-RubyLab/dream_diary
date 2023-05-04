@@ -1,0 +1,4 @@
+<%= simple_form_for [@dream, Comment.new] do |f| %>
+  <%= f.input :body, label: 'Add a comment' %>
+  <%= f.button :submit %>
+<% end %>

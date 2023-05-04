@@ -34,3 +34,6 @@
 .vscode
 
 coverage/*
+
+gcs.keyfile
+dump.rdb
