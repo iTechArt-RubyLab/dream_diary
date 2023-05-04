@@ -5,6 +5,7 @@
 <%= image_tag @dream.image, class: 'img-fluid', width: '300px' if @dream.image.attached? %>
 <p> <%= @dream.description %> </p>
 <%= link_to 'Edit', edit_dream_path(@dream), class: 'btn btn-secondary' %>
+<%= render 'comment_form' %>
 <% @comments.each do |comment| %>
   <div class="card mb-1">
     <div class="card-body">

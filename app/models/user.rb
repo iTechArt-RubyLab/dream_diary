@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :dreams, dependent: :destroy
+  has_many :comments, dependent: :destroy  
   has_one_attached :avatar, dependent: :destroy
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :validatable, :confirmable,
