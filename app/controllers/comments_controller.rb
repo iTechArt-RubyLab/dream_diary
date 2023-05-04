@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @dream = Dream.find_by(id: params[:dream_id])
     @comment = @dream.comments.create(comment_params.merge(user: current_user))
