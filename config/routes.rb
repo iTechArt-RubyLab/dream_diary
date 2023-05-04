@@ -4,7 +4,7 @@ require 'sidekiq/cron/web'
 Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
-  root 'categories#index'
+  root 'dreams#index'
 
   resources :categories, only: %i[index show]
   resources :dreams

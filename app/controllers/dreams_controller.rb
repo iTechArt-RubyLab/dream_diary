@@ -1,6 +1,10 @@
 class DreamsController < ApplicationController
   before_action :find_dream, only: %i[show destroy]
 
+  def index
+    @dreams = Dream.order(created_at: :desc)
+  end
+
   def new
     @dream = Dream.new
   end
