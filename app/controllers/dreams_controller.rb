@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  before_action :find_dream, only: %i[show destroy]
+  before_action :find_dream, only: %i[show edit update destroy]
 
   def index
     @dreams = Dream.order(created_at: :desc)
@@ -11,7 +11,21 @@ class DreamsController < ApplicationController
 
   def create
     @dream = current_user.dreams.create(dream_params)
-    redirect_to root_path
+    if @dream
+      redirect_to dream_path(@dream)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @dream.update(dream_params)
+      redirect_to dream_path(@dream)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def show

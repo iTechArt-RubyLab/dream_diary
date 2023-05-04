@@ -2,6 +2,8 @@
   <%= @dream.title %>
 <% end %>
 <h1> <%= @dream.title %> </h1>
+<%= image_tag @dream.image, class: 'img-fluid', width: '300px' %>
+<p> <%= @dream.description %> </p>
 <% @comments.each do |comment| %>
   <div class="card mb-1">
     <div class="card-body">
