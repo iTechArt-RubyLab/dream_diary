@@ -34,6 +34,8 @@ gem 'simple_form', '~> 5.2'
 gem 'google-cloud-storage', '~> 1.44', require: false
 gem 'image_processing', '>= 1.2'
 
+gem 'date_validator', '~> 0.12.0'
+
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', '~> 3.1', '>= 3.1.1'
