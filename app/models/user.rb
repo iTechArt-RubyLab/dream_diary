@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  AVATAR = Mime::LOOKUP.keys.keep_if { |v| v =~ /image/ }
+
   has_many :dreams, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
@@ -6,7 +8,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable,
          omniauth_providers: %i[google_oauth2]
 
-  AVATAR = Mime::LOOKUP.keys.keep_if { |v| v =~ /image/ }
+  enum :status, { active: 0, blocked: 1 }
+  enum :role, { user: 0, admin: 1 }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|

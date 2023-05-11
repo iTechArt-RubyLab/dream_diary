@@ -1,5 +1,6 @@
 class DreamsController < ApplicationController
   before_action :find_dream, only: %i[show edit update destroy]
+  load_and_authorize_resource
 
   def index
     @dreams = Dream.order(created_at: :desc)
@@ -12,6 +13,8 @@ class DreamsController < ApplicationController
   def create
     @dream = current_user.dreams.new(dream_params)
     if @dream.save
+      tags = Tag.where(name: tags_params)
+      @dream.tags << tags
       redirect_to dream_path(@dream)
     else
       render :new, status: :unprocessable_entity
@@ -41,7 +44,11 @@ class DreamsController < ApplicationController
   private
 
   def dream_params
-    params.require(:dream).permit(:date, :duration, :title, :description, :image, :tags, :category_id)
+    params.require(:dream).permit(:date, :duration, :title, :description, :image, :category_id)
+  end
+
+  def tags_params
+    params[:dream][:tags].reject(&:blank?)
   end
 
   def find_dream
