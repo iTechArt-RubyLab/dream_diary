@@ -6,11 +6,11 @@ class Ability
   def initialize(user)
     can :read, Dream
 
-    return unless user.present?
+    return if user.blank?
 
     can :read, :all
     can :create, Dream
-    can [:update, :destroy], Dream, user: user
+    can(%i[update destroy], Dream, user:)
 
     return unless user.admin?
 

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :validatable, :confirmable,
          omniauth_providers: %i[google_oauth2]
-  
+
   enum :status, { active: 0, blocked: 1 }
   enum :role, { user: 0, admin: 1 }
 
