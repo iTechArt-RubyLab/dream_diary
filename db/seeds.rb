@@ -1,3 +1,5 @@
+User.create(name: 'evrusha', email: 'uzaharau@gmail.com', password: ENV['ADMIN_PASSWORD'], confirmed_at: Time.now, role: :admin)
+
 Category.create(name: 'Food', description: Faker::Food.description)
 
 10.times do |x|
