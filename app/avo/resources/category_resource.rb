@@ -9,4 +9,6 @@ class CategoryResource < Avo::BaseResource
   field :dreams_count, as: :number
   field :image, as: :file
   field :dreams, as: :has_many
+
+  action ExportCsv
 end

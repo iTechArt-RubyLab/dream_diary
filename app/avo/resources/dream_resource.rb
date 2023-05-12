@@ -13,4 +13,6 @@ class DreamResource < Avo::BaseResource
   field :user, as: :belongs_to
   field :category, as: :belongs_to
   field :comments, as: :has_many
+
+  action ExportCsv
 end
