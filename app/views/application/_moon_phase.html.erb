@@ -1,0 +1,15 @@
+<div class="row">
+<div class="col-md-2">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Moon Phase</h5>
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+      <% @moon_phase_data.each do |value| %>
+        <li class="list-group-item"> <%= value.join(': ') %> </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

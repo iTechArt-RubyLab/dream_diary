@@ -1,4 +1,4 @@
-user = User.create!(name: 'evrusha', email: 'uzaharau@gmail.com', password: ENV['ADMIN_PASSWORD'], confirmed_at: Time.now, role: :admin)
+user = User.create!(name: 'evrusha', email: ENV['SMTP_USER'], password: ENV['ADMIN_PASSWORD'], confirmed_at: Time.now, role: :admin)
 user.avatar.attach(io: File.open('app/assets/images/default_avatar.jpg'), filename: 'default_avatar.jpg')
 
 20.times do

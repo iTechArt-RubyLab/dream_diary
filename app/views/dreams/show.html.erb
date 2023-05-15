@@ -13,12 +13,23 @@
 
 <%= render 'comment_form' %>
 
-<% @comments.each do |comment| %>
+<% @comments.includes(:user, :subcomments).find_each do |comment| %>
   <div class="card mb-1">
     <div class="card-body">
       <h5 class="card-title"><%= comment.user.email %></h5>
       <p class="card-text"><%= comment.body %></p>
     </div>
-    <%= render partial: 'subcomments', locals: { comment: comment } %>
+    <% if comment.subcomments.any? %>
+      <div class="ms-5">
+        <% comment.subcomments.each do |subcomment| %>
+          <div class="mb-0 border-top">
+            <div class="card-body">
+              <h5 class="card-title"><%= subcomment.user.email %></h5>
+              <p class="card-text"><%= subcomment.body %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 <% end %>
