@@ -22,10 +22,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="container-fluid">
-      <%= render 'moon_phase' %>
-        <div class="col-md-9">
-          <div class="bg-light p-3 mb-2 text-dark">
-            <%= yield %>
+      <div class="row">
+        <%= render 'moon_phase' %>
+          <div class="col-md-9">
+            <div class="bg-light p-3 mb-2 text-dark">
+              <%= yield %>
+            </div>
           </div>
         </div>
       </div>

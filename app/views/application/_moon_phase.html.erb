@@ -1,4 +1,3 @@
-<div class="row">
 <div class="col-md-2">
   <div class="card">
     <div class="card-header">
@@ -6,9 +5,9 @@
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-      <% @moon_phase_data.each do |value| %>
-        <li class="list-group-item"> <%= value.join(': ') %> </li>
-      <% end %>
+        <% @moon_phase_data[:days].first.each do |key, value| %>
+          <li class="list-group-item"><%= key %>: <%= value %></li>
+        <% end %>
       </ul>
     </div>
   </div>
