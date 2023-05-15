@@ -1,13 +1,31 @@
 <div class="col-md-2">
-  <div class="card">
+  <div class="card text-bg-dark p-3">
     <div class="card-header">
       <h5 class="card-title">Moon Phase</h5>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
         <% @moon_phase_data[:days].first.each do |key, value| %>
-          <li class="list-group-item"><%= key %>: <%= value %></li>
+          <li class="list-group-item text-bg-dark"><%= key %>: <%= value %></li>
         <% end %>
+      <% case @moon_phase_data[:days].first[:moonphase_name] %>
+      <% when "New moon" %>
+        <%= image_tag("new_moon.png") %>
+      <% when "Waxing crescent" %>
+        <%= image_tag("waxing_crescent.png") %>
+      <% when "First quarter" %>
+        <%= image_tag("first_quarter.png") %>
+      <% when "Waxing gibbous" %>
+        <%= image_tag("waxing_gibbous.png") %>
+      <% when "Full moon" %>
+        <%= image_tag("full_moon.png") %>
+      <% when "Waning gibbous" %>
+        <%= image_tag("waning_gibbous.png") %>
+      <% when "Last quarter" %>
+        <%= image_tag("last_quarter.png") %>
+      <% when "Waning crescent" %>
+        <%= image_tag("waning_crescent.png") %>
+      <% end %>
       </ul>
     </div>
   </div>
