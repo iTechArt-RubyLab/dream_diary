@@ -1,14 +1,15 @@
-<div class="row">
 <div class="col-md-2">
-  <div class="card">
+  <div class="card text-bg-dark p-3">
     <div class="card-header">
       <h5 class="card-title">Moon Phase</h5>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-      <% @moon_phase_data.each do |value| %>
-        <li class="list-group-item"> <%= value.join(': ') %> </li>
-      <% end %>
+        <li class="list-group-item text-bg-dark"><%= @moon_phase_data[:timezone] %></li>
+        <% @moon_phase_data[:days].first.each do |key, value| %>
+          <li class="list-group-item text-bg-dark"><%= key %>: <%= value %></li>
+        <% end %>
+        <%= moon_phase_image_tag(@moon_phase_data) %>
       </ul>
     </div>
   </div>

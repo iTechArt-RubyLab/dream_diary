@@ -1,5 +1,5 @@
 <div class="row row-cols-1 row-cols-md-4 g-4">
-  <% @categories.each do |category| %>
+  <% @categories.with_attached_image.each do |category| %>
     <div class="col">
       <div class="card">
         <%= link_to category_path(category) do %>

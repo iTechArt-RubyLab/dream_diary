@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 
   def moon_phase_data
     cookies[:moon_phase] ||= { value: MoonPhase.phase(request).to_json, expires: Time.zone.now + 1.hour }
-    @moon_phase_data = JSON.parse(cookies[:moon_phase]).symbolize_keys
+    @moon_phase_data = JSON.parse(cookies[:moon_phase]).deep_symbolize_keys
   end
 end

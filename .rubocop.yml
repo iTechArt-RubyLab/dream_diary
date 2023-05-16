@@ -23,3 +23,6 @@ Rails/HasAndBelongsToMany:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/CaseEquality:
+  Enabled: false

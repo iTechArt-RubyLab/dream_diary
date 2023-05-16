@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_11_095358) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_16_055423) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_095358) do
   create_table "dreams_tags", id: false, force: :cascade do |t|
     t.bigint "dream_id"
     t.bigint "tag_id"
+    t.index ["dream_id", "tag_id"], name: "index_dreams_tags_on_dream_id_and_tag_id", unique: true
     t.index ["dream_id"], name: "index_dreams_tags_on_dream_id"
     t.index ["tag_id"], name: "index_dreams_tags_on_tag_id"
   end
