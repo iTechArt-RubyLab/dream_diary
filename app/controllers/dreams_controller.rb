@@ -13,8 +13,7 @@ class DreamsController < ApplicationController
   def create
     @dream = current_user.dreams.new(dream_params)
     if @dream.save
-      tags = Tag.where(name: tags_params)
-      @dream.tags << tags
+      set_tags
       redirect_to dream_path(@dream)
     else
       render :new, status: :unprocessable_entity
@@ -25,6 +24,7 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update(dream_params)
+      set_tags
       redirect_to dream_path(@dream)
     else
       render :edit, status: :unprocessable_entity
@@ -53,5 +53,10 @@ class DreamsController < ApplicationController
 
   def find_dream
     @dream = Dream.find_by(id: params[:id])
+  end
+
+  def set_tags
+    @tags = Tag.where(name: tags_params)
+    @dream.tag_ids = @tags.pluck(:id)
   end
 end

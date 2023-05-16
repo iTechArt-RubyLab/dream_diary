@@ -37,9 +37,7 @@ end
     category: Category.order('RANDOM()').first
   )
 
-  rand(0..3).times do
-    dream.tags << Tag.order('RANDOM()').first
-  end
+  dream.tags << Tag.order('RANDOM()').first(rand(0..5))
 
   rand(15..45).times do
     Comment.create(
