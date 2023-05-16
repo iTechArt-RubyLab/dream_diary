@@ -1,11 +1,9 @@
 module MoonPhase
   module_function
 
-  include Constants
-
   def phase(request)
-    coordinates = request.local? ? MINSK_COORDINATES : request.location.coordinates.join(',')
-    url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/#{coordinates}/today"
+    coordinates = request.local? ? Constants::MINSK_COORDINATES : request.location.coordinates.join(',')
+    url = Constants::MOON_API_URL + "/#{coordinates}/today"
     params = {
       key: ENV['MOON_KEY'],
       include: 'timezone,days',
@@ -17,7 +15,7 @@ module MoonPhase
   end
 
   def represent_phase(phase)
-    MOON_PHASES.each do |range, phase_name|
+    Constants::MOON_PHASES.each do |range, phase_name|
       return phase_name if range === phase
     end
     'Invalid moon phase'

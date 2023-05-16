@@ -9,7 +9,7 @@
         <% @moon_phase_data[:days].first.each do |key, value| %>
           <li class="list-group-item text-bg-dark"><%= key %>: <%= value %></li>
         <% end %>
-        <%= image_tag("#{@moon_phase_data[:days].first[:moonphase_name].downcase.gsub(' ', '_')}.png") %>
+        <%= moon_phase_image_tag(@moon_phase_data) %>
       </ul>
     </div>
   </div>

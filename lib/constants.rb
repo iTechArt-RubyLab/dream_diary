@@ -12,4 +12,5 @@ module Constants
     0.75 => 'Last quarter',
     0.76..1 => 'Waning crescent'
   }.freeze
+  MOON_API_URL = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline'
 end
