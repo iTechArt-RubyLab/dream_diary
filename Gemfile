@@ -38,6 +38,7 @@ gem 'date_validator', '~> 0.12.0'
 
 gem 'avo'
 gem 'geocoder', '~> 1.8', '>= 1.8.1'
+
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', '~> 3.1', '>= 3.1.1'

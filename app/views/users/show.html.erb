@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="card mb-3">
+      <%= image_tag current_user.avatar, class: "card-img-top" if current_user.avatar.attached? %>
+      <div class="card-body">
+        <h5 class="card-title"><%= current_user.name %></h5>
+        <p class="card-text"><%= current_user.email %></p>
+        <%= link_to "Edit Profile", edit_user_path, class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <% if @dreams.any? %>
+      <div class="card-deck">
+        <% @dreams.each do |dream| %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"><%= dream.title %></h5>
+              <p class="card-text"><%= dream.description %></p>
+              <%= link_to "Show", dream_path(dream), class: "btn btn-primary" %>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+              </button>
+              <%= render 'modal', dream: %>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><%= dream.date.strftime("%B %d, %Y") %></small>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>No dreams found.</p>
+    <% end %>
+  </div>
+</div>
