@@ -9,24 +9,7 @@
         <% @moon_phase_data[:days].first.each do |key, value| %>
           <li class="list-group-item text-bg-dark"><%= key %>: <%= value %></li>
         <% end %>
-      <% case @moon_phase_data[:days].first[:moonphase_name] %>
-      <% when "New moon" %>
-        <%= image_tag("new_moon.png") %>
-      <% when "Waxing crescent" %>
-        <%= image_tag("waxing_crescent.png") %>
-      <% when "First quarter" %>
-        <%= image_tag("first_quarter.png") %>
-      <% when "Waxing gibbous" %>
-        <%= image_tag("waxing_gibbous.png") %>
-      <% when "Full moon" %>
-        <%= image_tag("full_moon.png") %>
-      <% when "Waning gibbous" %>
-        <%= image_tag("waning_gibbous.png") %>
-      <% when "Last quarter" %>
-        <%= image_tag("last_quarter.png") %>
-      <% when "Waning crescent" %>
-        <%= image_tag("waning_crescent.png") %>
-      <% end %>
+        <%= image_tag("#{@moon_phase_data[:days].first[:moonphase_name].downcase.gsub(' ', '_')}.png") %>
       </ul>
     </div>
   </div>
