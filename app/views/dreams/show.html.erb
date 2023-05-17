@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<% @comments.includes(:user, :subcomments).order(created_at: :desc).each do |comment| %>
+<% @comments.includes(:user, :replies).order(created_at: :desc).each do |comment| %>
   <div class="card mb-1">
     <div class="card-body">
       <h5 class="card-title"><%= comment.user.email %></h5>
@@ -30,13 +30,13 @@
         </div>
       </div>
     </div>
-    <% if comment.subcomments.any? %>
+    <% if comment.replies.any? %>
       <div class="ms-5">
-        <% comment.subcomments.each do |subcomment| %>
+        <% comment.replies.each do |reply| %>
           <div class="mb-0 border-top">
             <div class="card-body">
-              <h5 class="card-title"><%= subcomment.user.email %></h5>
-              <p class="card-text"><%= subcomment.body %></p>
+              <h5 class="card-title"><%= reply.user.email %></h5>
+              <p class="card-text"><%= reply.body %></p>
             </div>
           </div>
         <% end %>
