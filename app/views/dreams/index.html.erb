@@ -4,6 +4,7 @@
       <%= link_to dream_path(dream), class: 'list-group-item list-group-item-action' do %>
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1"><%= dream.title %></h5>
+          <%= link_to "Export", dream_path(dream, format: 'csv') %>
           <small><%= time_ago_in_words(dream.created_at) %> ago</small>
         </div>
       <% end %>

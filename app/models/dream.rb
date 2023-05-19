@@ -10,4 +10,11 @@ class Dream < ApplicationRecord
   validates :duration, presence: true, numericality: { in: 0..24 }
   validates :title, presence: true, length: { in: 3..50 }
   validates :description, length: { maximum: 500 }
+
+  def to_csv
+    CSV.generate do |csv|
+      csv << Dream.column_names
+      csv << attributes.values_at(*Dream.column_names)
+    end
+  end
 end
