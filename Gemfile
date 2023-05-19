@@ -33,6 +33,7 @@ gem 'simple_form', '~> 5.2'
 
 gem 'google-cloud-storage', '~> 1.44', require: false
 gem 'image_processing', '>= 1.2'
+gem 'ruby-vips', '~> 2.1', '>= 2.1.4'
 
 gem 'date_validator', '~> 0.12.0'
 
