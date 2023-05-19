@@ -1,0 +1,10 @@
+<%= link_to "Add comment",
+                new_dream_comment_path(@dream, @comment),
+                class: "btn btn-primary",
+                data: { turbo_frame: dom_id(Comment.new) } %>
+
+<%= turbo_frame_tag Comment.new %>
+
+<%= turbo_frame_tag "comments" do %>
+  <%= render partial: 'comments/comment', locals: {comments: @comments} %>
+<% end %>

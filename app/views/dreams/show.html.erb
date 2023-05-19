@@ -11,4 +11,4 @@
 <p> <%= @dream.description %> </p>
 <%= link_to 'Edit', edit_dream_path(@dream), class: 'btn btn-secondary' %>
 
-<%= render 'comments' %>
+<%= render template: 'comments/index', comments: @comments %>
