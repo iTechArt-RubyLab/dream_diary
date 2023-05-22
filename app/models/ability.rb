@@ -5,6 +5,7 @@ class Ability
 
   def initialize(user)
     can :read, Dream
+    can :read, Category
 
     return if user.blank?
 
