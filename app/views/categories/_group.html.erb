@@ -1,0 +1,6 @@
+<div class="mb-3">
+  <%= link_to "All", dreams_path, class: "btn btn-dark" %>
+  <% Category.active.each do |category| %>
+    <%= link_to category.name, category_path(category), class: "btn btn-dark" %>
+  <% end %>
+</div>

@@ -1,11 +1,15 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @dreams.includes(:category).each do |dream| %>
+<%= render 'categories/group' %>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <% @dreams.with_attached_image.includes(:category).each do |dream| %>
     <div class="col">
       <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title"><%= dream.title %></h5>
-          <p class="card-text"><%= dream.category.name %></p>
-        </div>
+        <%= link_to dream_path(dream), class: "card-link" do %>
+          <%= image_tag dream.image, class: "card-img-top", style: "max-height: 150px" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= dream.title %></h5>
+            <p class="card-text"><%= dream.category.name %></p>
+          </div>
+        <% end %>
         <div class="card-footer">
           <small class="text-body-secondary"><%= time_ago_in_words(dream.created_at) %> ago</small>
         </div>
