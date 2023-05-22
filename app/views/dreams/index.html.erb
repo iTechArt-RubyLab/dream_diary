@@ -1,14 +1,15 @@
-<div class="container px-4">
-  <div class="list-group my-4">
-    <% @dreams.each do |dream| %>
-      <%= link_to dream_path(dream), class: 'list-group-item list-group-item-action' do %>
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1"><%= dream.title %></h5>
-          <%= link_to "Export", dream_path(dream, format: 'csv') %>
-          <small><%= time_ago_in_words(dream.created_at) %> ago</small>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @dreams.each do |dream| %>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title"><%= dream.title %></h5>
+          <p class="card-text"><%= dream.category.name %></p>
         </div>
-      <% end %>
-      </a>
-    <% end %>
-  </div>
+        <div class="card-footer">
+          <small class="text-body-secondary"><%= time_ago_in_words(dream.created_at) %> ago</small>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
