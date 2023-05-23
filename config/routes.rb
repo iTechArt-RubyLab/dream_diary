@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   end
   mount Sidekiq::Web => '/sidekiq'
 
-  root 'dreams#index'
+  root 'pages#index'
 
   resources :categories, only: %i[index show]
 
   resources :dreams do
-    resources :comments, only: %i[new create]
+    resources :comments
   end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',

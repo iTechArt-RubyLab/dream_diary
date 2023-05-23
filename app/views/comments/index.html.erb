@@ -1,0 +1,12 @@
+<div class='mt-5'>
+  <%= link_to "Add comment",
+                  new_dream_comment_path(@dream, @comment),
+                  class: "btn btn-primary",
+                  data: { turbo_frame: dom_id(Comment.new) } %>
+
+  <%= turbo_frame_tag Comment.new %>
+
+  <%= turbo_frame_tag "comments" do %>
+      <%= render @comments.includes(:user, replies: :user).order(created_at: :desc) %>
+  <% end %>
+</div>

@@ -1,5 +1,0 @@
-<%= simple_form_for [@dream, Comment.new] do |f| %>
-  <%= f.hidden_field :parent_id, value: parent_id rescue nil %>
-  <%= f.input :body, label: 'Add a comment' %>
-  <%= f.button :submit %>
-<% end %>

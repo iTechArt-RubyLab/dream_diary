@@ -5,12 +5,15 @@ class Ability
 
   def initialize(user)
     can :read, Dream
+    can :read, Category
 
     return if user.blank?
 
     can :read, :all
     can :create, Dream
+    can(%i[create reply], Comment)
     can(%i[update destroy], Dream, user:)
+    can(%i[update destroy], Comment, user:)
 
     return unless user.admin?
 

@@ -1,6 +1,6 @@
 class DreamsController < ApplicationController
   before_action :find_dream, only: %i[show edit update destroy]
-  load_and_authorize_resource
+  authorize_resource
 
   def index
     @dreams = Dream.order(created_at: :desc)
@@ -34,6 +34,10 @@ class DreamsController < ApplicationController
   def show
     render :error, status: :not_found unless @dream
     @comments = @dream.comments.where(parent_id: nil)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @dream.to_csv, filename: %(dreams-#{DateTime.now.strftime('%d%m%Y%H%M')}.csv) }
+    end
   end
 
   def destroy

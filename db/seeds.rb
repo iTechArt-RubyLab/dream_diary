@@ -37,6 +37,9 @@ end
     category: Category.order('RANDOM()').first
   )
 
+  file = URI.open(Faker::Avatar.image)
+  dream.image.attach(io: file, filename: 'avatar.jpg')
+
   dream.tags << Tag.order('RANDOM()').first(rand(0..5))
 
   rand(15..45).times do

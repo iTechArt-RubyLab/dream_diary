@@ -1,0 +1,8 @@
+<div class='mb-3'>
+  <%= simple_form_for [@dream, @comment] do |f| %>
+    <%= f.hidden_field :parent_id, value: comment.parent_id rescue nil %>
+    <%= f.input :body, label: 'Comment' %>
+    <%= link_to "Cancel", dream_path(@dream), class: "btn btn-light" %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

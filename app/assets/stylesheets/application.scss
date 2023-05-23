@@ -1,9 +1,34 @@
 @import "bootstrap";
 
 .notice {
-  color: #155724;
+  color: #fff;
 }
 
 .alert {
-  color: #721c24;
+  color: #fff;
+}
+
+.bg-dark-purple {
+  background-color: #2E0854;
+  color: #F5F5F5;
+}
+
+.card {
+  background-color: #1b151b;
+  color: #F5F5F5;
+  text-shadow: 1px 1px 2px #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #796868;
+}
+
+.card-title {
+  color: #FFCC66;
+}
+
+.card-text {
+  color: #B8B8B8;
+}
+
+.card-link {
+  text-decoration: none;
 }
