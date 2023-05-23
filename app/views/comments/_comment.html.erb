@@ -4,6 +4,11 @@
       <div class="card-body">
         <h5 class="card-title"><%= comment.user.email %></h5>
         <p class="card-text"><%= comment.body %></p>
+        <%= link_to "Reply",
+                  new_reply_comment_path(@dream, comment),
+                  class: "btn btn-primary",
+                  data: { turbo_frame: comment.id } %>
+        <%= turbo_frame_tag comment.id %>
       </div>
       <% if comment.replies.any? %>
         <div class="ms-5">
