@@ -5,16 +5,12 @@
       <p class="card-text"><%= comment.body %></p>
       <%= link_to "Reply",
                 new_reply_comment_path(@dream, comment),
-                class: "btn btn-primary",
+                class: "btn btn-secondary btn-sm",
                 data: { turbo_frame: comment.id } %>
       <%= turbo_frame_tag comment.id %>
     </div>
     <%= turbo_frame_tag "reply-#{comment.id}" do %>
-      <% if comment.replies.any? %>
-        <% comment.replies.each do |reply| %>
-          <%= render partial: 'comments/reply', locals: { reply: } %>
-        <% end %>
-      <% end %>
+      <%= render partial: 'comments/reply', collection: comment.replies if comment.replies.any? %>
     <% end %>
   </div>
 </div>
