@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   rescue_from CanCan::AccessDenied do |e|
-    redirect_to root_url, alert: e.message
+    redirect_to request.referer || root_url, alert: e.message
   end
 
   private
