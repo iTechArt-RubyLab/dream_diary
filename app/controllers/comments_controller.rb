@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
 
   def new
     @comment = @dream.comments.new(parent_id: params[:parent_id])
-    p params[:parent_id]
   end
 
   def create
