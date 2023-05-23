@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @comment = @dream.comments.new
+    @comment = @dream.comments.new(parent_id: params[:parent_id])
+    p params[:parent_id]
   end
 
   def create
@@ -33,10 +34,6 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     redirect_to dream_path(@dream)
-  end
-
-  def reply
-    @comment = Comment.find_by(id: params[:id]).replies.new
   end
 
   private

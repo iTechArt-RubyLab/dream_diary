@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :dreams do
     resources :comments
   end
-  get 'dreams/:dream_id/comments/:id/new', to: 'comments#reply', as: 'new_reply_comment'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                                     registrations: 'users/registrations' }
