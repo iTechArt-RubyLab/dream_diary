@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   before_action :find_dream
+  before_action :find_comment, only: %i[edit update destroy]
+  load_and_authorize_resource
 
   def new
     @comment = @dream.comments.new
@@ -18,6 +20,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @comment.update(comment_params)
+      redirect_to dream_path(@dream)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to dream_path(@dream)
+  end
+
   def reply
     @comment = Comment.find_by(id: params[:id]).replies.new
   end
@@ -30,5 +47,9 @@ class CommentsController < ApplicationController
 
   def find_dream
     @dream = Dream.find_by(id: params[:dream_id])
+  end
+
+  def find_comment
+    @comment = Comment.find_by(id: params[:id])
   end
 end

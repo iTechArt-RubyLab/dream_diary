@@ -1,5 +1,6 @@
 class DreamsController < ApplicationController
   before_action :find_dream, only: %i[show edit update destroy]
+  authorize_resource
 
   def index
     @dreams = Dream.order(created_at: :desc)

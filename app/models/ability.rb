@@ -11,7 +11,7 @@ class Ability
 
     can :read, :all
     can :create, Dream
-    can :create, Comment
+    can(%i[create reply], Comment)
     can(%i[update destroy], Dream, user:)
     can(%i[update destroy], Comment, user:)
 

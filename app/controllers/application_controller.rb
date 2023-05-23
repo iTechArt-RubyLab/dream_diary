@@ -2,10 +2,9 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   before_action :moon_phase_data
   before_action :set_locale
-  authorize_resource unless: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |e|
-    redirect_to new_user_session_path, alert: e.message
+    redirect_to root_url, alert: e.message
   end
 
   private
