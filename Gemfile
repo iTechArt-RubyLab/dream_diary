@@ -25,6 +25,8 @@ gem 'omniauth-google-oauth2', '~> 1.1', '>= 1.1.1'
 gem 'omniauth-rails_csrf_protection', '~> 1.0', '>= 1.0.1'
 
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+gem 'octicons_helper', '~> 19.1'
+
 gem 'cancancan', '~> 3.5'
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 gem 'sidekiq', '~> 7.0', '>= 7.0.7'
