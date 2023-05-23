@@ -7,6 +7,6 @@
   <%= turbo_frame_tag Comment.new %>
 
   <%= turbo_frame_tag "comments" do %>
-    <%= render partial: 'comments/comment', locals: {comments: @comments} %>
+      <%= render @comments.includes(:user, :replies).order(created_at: :desc) %>
   <% end %>
 </div>

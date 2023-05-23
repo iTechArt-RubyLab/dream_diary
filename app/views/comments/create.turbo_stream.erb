@@ -1,2 +1,7 @@
-<%= turbo_stream.prepend "comments", render(@comment) %>
-<%= turbo_stream.update Comment.new, "" %>
+<% if @comment.parent_id %>
+  <%= turbo_stream.append "reply-#{@comment.parent_id}", partial: 'comments/reply', locals: {reply: @comment} %>
+  <%= turbo_stream.update @comment.parent_id, "" %>
+<% else %>
+  <%= turbo_stream.prepend "comments", render(@comment) %>
+  <%= turbo_stream.update Comment.new, "" %>
+<% end %>
