@@ -13,9 +13,7 @@ Rails.application.routes.draw do
 
   resources :dreams do
     resources :comments
-    collection do
-      get 'search', to: 'dreams#search'
-    end
+    get 'search', on: :collection
   end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
