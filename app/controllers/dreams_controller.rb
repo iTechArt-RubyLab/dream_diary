@@ -45,6 +45,11 @@ class DreamsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def search
+    @dreams = Dream.search(params[:search][:search])
+    render turbo_stream: turbo_stream.update('dreams', partial: 'dreams', locals: { dreams: @dreams})
+  end
+
   private
 
   def dream_params

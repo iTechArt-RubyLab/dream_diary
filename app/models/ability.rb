@@ -4,7 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Dream
+    can(%i[read search], Dream)
     can :read, Category
 
     return if user.blank?

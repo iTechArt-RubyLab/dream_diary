@@ -4,10 +4,14 @@
       <%= link_to 'Dream Diary', root_path, class: 'navbar-brand' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
+      <%= simple_form_for :search, url: search_dreams_path, method: :get, wrapper: :inline_form, html: { class: "form-inline" } do |f| %>
+        <div class="input-group">
+          <%= f.input_field :search, class: "form-control", placeholder: "Search Dreams..." %>   
+          <div class="input-group-append">
+            <%= f.submit "Search", class: "btn btn-secondary" %>
+          </div>
+        </div>
+      <% end %>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

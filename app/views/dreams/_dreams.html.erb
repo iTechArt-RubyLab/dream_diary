@@ -1,7 +1,5 @@
-<%= render 'categories/group' %>
-
 <div class="row row-cols-1 row-cols-md-4 g-4">
-  <% @dreams.with_attached_image.includes(:category).each do |dream| %>
+  <% dreams.each do |dream| %>
     <div class="col">
       <div class="card h-100">
         <%= link_to dream_path(dream), class: "card-link" do %>
