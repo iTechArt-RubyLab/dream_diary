@@ -47,7 +47,7 @@ class DreamsController < ApplicationController
 
   def search
     @dreams = Dream.search(params[:search][:search])
-    render turbo_stream: turbo_stream.update('dreams', partial: 'dreams', locals: { dreams: @dreams})
+    render turbo_stream: turbo_stream.update('dreams', partial: 'dreams', locals: { dreams: @dreams })
   end
 
   private
