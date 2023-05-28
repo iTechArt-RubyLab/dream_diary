@@ -17,7 +17,7 @@
           <%= image_tag @dream.user.avatar, class: 'rounded-circle', style: 'width: 50px' %>
           <div class="d-inline-block">
             <h4 class="mb-0"><%= @dream.user.name %></h4>
-            <p class="m-0 text-muted"><%= l @dream.created_at, format: :long %></p>
+            <p class="m-0 text-muted"><%= @dream.date %></p>
           </div>
         </div>
         <h1 class="card-title h4 mb-4"><%= @dream.title %></h1>

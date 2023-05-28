@@ -7,6 +7,6 @@
   <%= turbo_frame_tag Comment.new %>
 
   <%= turbo_frame_tag "comments" do %>
-      <%= render @comments.includes(:user, replies: :user).order(created_at: :desc) %>
+      <%= render @comments.includes(user: :avatar_blob, replies: { user: :avatar_blob }).order(created_at: :desc) %>
   <% end %>
 </div>
