@@ -42,10 +42,10 @@ class CommentsController < ApplicationController
   end
 
   def find_dream
-    @dream = Dream.find_by(id: params[:dream_id])
+    @dream = Dream.find(params[:dream_id])
   end
 
   def find_comment
-    @comment = Comment.find_by(id: params[:id])
+    @comment = Comment.find(params[:id])
   end
 end

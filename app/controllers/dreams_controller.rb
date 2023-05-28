@@ -62,7 +62,7 @@ class DreamsController < ApplicationController
   end
 
   def find_dream
-    @dream = Dream.find_by(id: params[:id])
+    @dream = Dream.find(params[:id])
   end
 
   def set_tags
