@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
   authorize_resource
 
   def index
-    @dreams = Dream.order(created_at: :desc)
+    @dreams = Dream.with_attached_image.includes(:category).order(created_at: :desc)
   end
 
   def new
@@ -46,7 +46,8 @@ class DreamsController < ApplicationController
   end
 
   def search
-    @dreams = Dream.search(params[:search][:search])
+    result_ids = Dream.search(params[:search][:search]).pluck(:id)
+    @dreams = Dream.where(id: result_ids).with_attached_image.includes(:category)
     render turbo_stream: turbo_stream.update('dreams', partial: 'dreams', locals: { dreams: @dreams })
   end
 
