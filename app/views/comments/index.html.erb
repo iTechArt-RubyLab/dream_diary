@@ -2,7 +2,7 @@
   <%= link_to "Add comment",
                   new_dream_comment_path(@dream, @comment),
                   class: "btn btn-primary",
-                  data: { turbo_frame: dom_id(Comment.new) } %>
+                  data: { turbo_frame: dom_id(Comment.new) } if can? :create, Comment %>
 
   <%= turbo_frame_tag Comment.new %>
 
