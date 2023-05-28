@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "toast";
 
 .bg-dark-purple {
   background-color: #2E0854;
@@ -11,10 +12,16 @@
   text-shadow: 1px 1px 2px #000000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border: 1px solid #796868;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-title {
   color: #FFCC66;
+}
+
+.card-body {
+  flex: 1;
 }
 
 .card-text {
@@ -23,4 +30,24 @@
 
 .card-link {
   text-decoration: none;
+}
+
+.card-footer {
+  margin-top: auto;
+}
+
+.avatar-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -15,7 +15,10 @@
       </button>
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"> <%= current_user&.email %> </h5>
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><%= current_user&.name %></h5>
+          <div class="avatar-wrapper">
+            <%= image_tag current_user.avatar, class: "avatar-image" if user_signed_in? %>
+          </div>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">

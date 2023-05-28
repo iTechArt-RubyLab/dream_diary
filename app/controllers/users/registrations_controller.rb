@@ -3,7 +3,13 @@ module Users
     before_action :configure_sign_up_params, only: :create
 
     def create
-      super { |user| user.avatar.attach(params[:avatar]) if params[:avatar].present? }
+      super do |user|
+        if params[:avatar].present?
+          user.avatar.attach(params[:avatar])
+        else
+          user.avatar.attach(io: File.open('app/assets/images/default_avatar.jpg'), filename: 'default_avatar.jpg')
+        end
+      end
     end
 
     protected

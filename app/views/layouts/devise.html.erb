@@ -19,9 +19,9 @@
 
   <%= content_tag :body do %>
     <%= render 'header' %>
-    <%= render 'toast' %>
     <div class='devise-container'>
       <%= yield %>
     </div>
   <% end %>
+  <%= render 'toast' %>
 </html>

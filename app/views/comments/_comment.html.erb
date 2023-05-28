@@ -17,10 +17,10 @@
                   data: { turbo_frame: "new_comment#{comment.id}" } if can? :reply, Comment %>
         <%= link_to "Edit",
                     edit_dream_comment_path(@dream, comment),
-                    class: "btn btn-warning btn-sm" if can? :update, Dream, user: current_user %>
+                    class: "btn btn-warning btn-sm" if can? :update, comment %>
       <% end %>
       <%= link_to 'Delete', dream_comment_path(@dream, comment), class: "btn btn-danger btn-sm",
-                                                                 data: { turbo_method: :delete } if can? :delete, Comment, user: current_user %>
+                                                                 data: { turbo_method: :delete } if can? :destroy, comment %>
       <small class="text-muted position-absolute bottom-0 end-0 mb-2 me-2"><%= time_ago_in_words(comment.created_at) %> ago</small>
       <%= turbo_frame_tag "new_comment#{comment.id}" %>
     </div>
