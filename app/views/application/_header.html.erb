@@ -4,7 +4,7 @@
       <%= link_to 'Dream Diary', root_path, class: 'navbar-brand' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <%= simple_form_for :search, url: search_dreams_path, method: :get, wrapper: :inline_form, html: { class: "form-inline" } do |f| %>
+      <%= simple_form_for :search, url: search_dreams_path, wrapper: :inline_form, html: { class: "form-inline" } do |f| %>
         <div class="input-group">
           <%= f.input_field :search, class: "form-control", placeholder: "Search Dreams..." %>   
           <div class="input-group-append">
