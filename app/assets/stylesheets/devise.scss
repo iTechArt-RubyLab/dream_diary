@@ -16,10 +16,15 @@ h2 {
   text-align: center;
 }
 
-.notice {
-  color: #fff;
+.toast {
+  width: 400px;
+  font-size: 23px;
 }
 
-.alert {
-  color: #fff;
+.toast-header {
+  background-color: #2E0854;
+}
+
+.toast-body {
+  color: #eb0b03;
 }

@@ -1,5 +1,5 @@
 <div class="row row-cols-1 row-cols-md-4 g-4">
-  <% dreams.each do |dream| %>
+  <% dreams.with_attached_image.each do |dream| %>
     <div class="col">
       <div class="card h-100">
         <%= link_to dream_path(dream), class: "card-link" do %>
