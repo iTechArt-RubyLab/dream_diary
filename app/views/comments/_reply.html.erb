@@ -16,7 +16,7 @@
               class: "btn btn-warning btn-sm" if can? :update, reply %>
       <% end %>
       <%= link_to 'Delete', dream_comment_path(@dream, reply), class: "btn btn-danger btn-sm",
-                                                               data: { turbo_method: :delete } if can? :destroy, reply %>
+                                                               data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } if can? :destroy, reply %>
       <small class="text-muted position-absolute bottom-0 end-0 mb-2 me-2"><%= time_ago_in_words(reply.created_at) %> ago</small>
     </div>
   </div>
