@@ -4,7 +4,7 @@
   <div class="input-group">
     <%= f.input_field :search, class: "form-control", required: false, placeholder: "Search Dreams...",
                                                       style: "width: 40%;", data: { search_form_target: "search" } %>
-    <%= f.input_field :date, class: "form-control date", placeholder: "Date", data: { search_form_target: "date" } %>
+    <%= f.input_field :date, class: "form-control s_date", placeholder: "Date", data: { search_form_target: "date" } %>
     <span class="input-group-text btn btn-light" type='button' data-action="click->search-form#clear">
       <%= octicon "x", height: 20 %>
     </span>

@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["search", "date"]
 
   connect() {
-    flatpickr('.date')
+    flatpickr('.s_date')
   }
 
   submit(event) {
