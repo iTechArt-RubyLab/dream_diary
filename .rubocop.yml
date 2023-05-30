@@ -26,3 +26,9 @@ Style/ClassAndModuleChildren:
 
 Style/CaseEquality:
   Enabled: false
+
+Security/Open:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false

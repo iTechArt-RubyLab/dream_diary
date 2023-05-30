@@ -2,22 +2,16 @@
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <%= link_to 'Dream Diary', root_path, class: 'navbar-brand' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= simple_form_for :search, url: search_dreams_path, method: :get, wrapper: :inline_form, html: { class: "form-inline" } do |f| %>
-        <div class="input-group">
-          <%= f.input_field :search, class: "form-control", placeholder: "Search Dreams..." %>   
-          <div class="input-group-append">
-            <%= f.submit "Search", class: "btn btn-secondary" %>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'search_form' %>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"> <%= current_user&.email %> </h5>
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><%= current_user&.name %></h5>
+          <div class="avatar-wrapper">
+            <%= image_tag current_user.avatar, class: "avatar-image" if user_signed_in? %>
+          </div>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">

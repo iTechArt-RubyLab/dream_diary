@@ -1,7 +1,7 @@
 <%= simple_form_for @dream do |f| %>
   <div>
     <%= f.input :date %>
-    <%= f.input :duration, as: :range, input_html: { min: 0, max: 24, step: 1, value: 8 }, wrapper_html: { class: 'range-field' } %>
+    <%= f.input :duration, as: :select, collection: (0..24).to_a, selected: 8, prompt: 'Select duration' %>
     <%= f.association :category %>
     <%= f.input :title %>
     <%= f.input :description %>

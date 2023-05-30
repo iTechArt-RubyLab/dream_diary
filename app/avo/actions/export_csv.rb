@@ -6,7 +6,7 @@ class ExportCsv < Avo::BaseAction
   field :id, as: :boolean
   field :name, as: :boolean
   field :status, as: :boolean
-  field :dream_count, as: :boolean
+  field :dreams_count, as: :boolean
   field :created_at, as: :boolean
 
   def handle(models:, resource:, fields:, **)

@@ -1,6 +1,6 @@
 <div class="mb-3">
-  <%= link_to "All", dreams_path, class: "btn btn-dark" %>
-  <% Category.active.each do |category| %>
-    <%= link_to category.name, category_path(category), class: "btn btn-dark" %>
+  <%= link_to "All", dreams_path, class: "btn btn-dark my-1" %>
+  <% Category.active.where('dreams_count > 0').order(dreams_count: :desc).each do |category| %>
+    <%= link_to category.name, category_path(category), class: "btn btn-dark my-1" %>
   <% end %>
 </div>

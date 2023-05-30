@@ -1,3 +1,7 @@
 good_night:
   cron: '0 22 * * * Europe/Minsk'
   class: 'GoodNightJob'
+
+reindex_tags:
+  cron: '*/1 * * * *'
+  class: ReindexTagsJob
