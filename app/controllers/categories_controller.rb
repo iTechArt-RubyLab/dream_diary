@@ -2,7 +2,8 @@ class CategoriesController < ApplicationController
   before_action :find_category, only: :show
 
   def show
-    render turbo_stream: turbo_stream.update('dreams_category', partial: 'dreams/dreams', locals: { dreams: @category.dreams })
+    render turbo_stream: turbo_stream.update('dreams_category', partial: 'dreams/dreams',
+                                                                locals: { dreams: @category.dreams })
   end
 
   private

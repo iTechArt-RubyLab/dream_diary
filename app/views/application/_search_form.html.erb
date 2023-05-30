@@ -1,0 +1,13 @@
+<%= simple_form_for :search, url: search_dreams_path,
+                               wrapper: :inline_form, html: { class: "form-inline" },
+                               data: { controller: 'search-form' } do |f| %>
+  <div class="input-group">
+    <%= f.input_field :search, class: "form-control", required: false, placeholder: "Search Dreams...",
+                                                      style: "width: 40%;", data: { search_form_target: "search" } %>
+    <%= f.input_field :date, class: "form-control date", placeholder: "Date", data: { search_form_target: "date" } %>
+    <span class="input-group-text btn btn-light" type='button' data-action="click->search-form#clear">
+      <%= octicon "x", height: 20 %>
+    </span>
+    <%= f.submit "Search", class: "input-group-append btn btn-info", data: { action: 'click->search-form#submit' } %>
+  </div>
+<% end %>

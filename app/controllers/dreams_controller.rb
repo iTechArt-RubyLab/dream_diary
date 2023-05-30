@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
   authorize_resource
 
   def index
-    @dreams = Dream.with_attached_image.includes(:category).order(created_at: :desc)
+    @dreams = Dream.order(created_at: :desc)
   end
 
   def new
@@ -46,8 +46,19 @@ class DreamsController < ApplicationController
   end
 
   def search
-    result_ids = Dream.search(params[:search][:search]).pluck(:id)
-    @dreams = Dream.where(id: result_ids).with_attached_image.includes(:category)
+    search_field = (search_params[:search].presence || '*')
+    date = search_params[:date].presence
+
+    @dreams = if search_params[:search].start_with?('#')
+                tag_name = search_params[:search].delete_prefix('#')
+                where_scope = { tags: tag_name }
+                where_scope[:date] = date if date
+                Dream.search(tag_name, fields: %i[tags], where: where_scope)
+              elsif date
+                Dream.search(search_field, fields: %i[title description date], where: { date: })
+              else
+                Dream.search(search_field, fields: %i[title description])
+              end
     render turbo_stream: turbo_stream.update('dreams', partial: 'dreams', locals: { dreams: @dreams })
   end
 
@@ -68,5 +79,9 @@ class DreamsController < ApplicationController
   def set_tags
     @tags = Tag.where(name: tags_params)
     @dream.tag_ids = @tags.pluck(:id)
+  end
+
+  def search_params
+    params.require(:search).permit(:search, :date)
   end
 end

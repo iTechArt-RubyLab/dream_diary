@@ -18,11 +18,14 @@
           <div class="d-inline-block">
             <h4 class="mb-0"><%= @dream.user.name %></h4>
             <p class="m-0 text-muted"><%= @dream.date %></p>
+            <h4 class="m-0 text-muted"><%= @dream.duration %></h4>
           </div>
         </div>
         <h1 class="card-title h4 mb-4"><%= @dream.title %></h1>
         <% @dream.tags.each do |tag| %>
-          <span class="badge bg-info text-light me-2"><%= tag.name %></span>
+          <%= link_to search_dreams_path(search: { search: "##{tag.name}"}), data: { turbo_method: :post }, class: 'badge bg-info text-light me-2' do %>
+            <%= tag.name %>
+          <% end %>
         <% end %>
         <p class="card-text"><%= @dream.description %></p>
         <%= link_to 'Edit', edit_dream_path(@dream), class: 'btn btn-secondary me-2' if can? :update, @dream %>
