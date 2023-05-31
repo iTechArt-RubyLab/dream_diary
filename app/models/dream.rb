@@ -25,8 +25,8 @@ class Dream < ApplicationRecord
 
   def to_csv
     CSV.generate do |csv|
-      csv << Dream.column_names
-      csv << attributes.values_at(*Dream.column_names)
+      csv << %w[title description category_name user_name tags]
+      csv << [title, description, category.name, user.name, tags.map(&:name).join(',')]
     end
   end
 end
