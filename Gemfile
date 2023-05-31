@@ -47,6 +47,8 @@ gem 'http_accept_language', '~> 2.1', '>= 2.1.1'
 gem 'elasticsearch', '~> 8.7', '>= 8.7.1'
 gem 'searchkick', '~> 5.2', '>= 5.2.4'
 
+gem 'pagy', '~> 6.0', '>= 6.0.4'
+
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', '~> 3.1', '>= 3.1.1'

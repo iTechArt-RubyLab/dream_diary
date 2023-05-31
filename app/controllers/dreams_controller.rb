@@ -3,7 +3,11 @@ class DreamsController < ApplicationController
   authorize_resource
 
   def index
-    @dreams = Dream.order(created_at: :desc)
+    @pagy, @dreams = pagy_countless(Dream.includes(:image_blob, :category).order(created_at: :desc), items: 20)
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   def new
@@ -58,7 +62,7 @@ class DreamsController < ApplicationController
                 Dream.search(search_field, fields: %i[title description date], where: { date: })
               else
                 Dream.search(search_field, fields: %i[title description])
-              end
+              end.includes(:image_blob, :category)
     render turbo_stream: turbo_stream.update('dreams', partial: 'dreams', locals: { dreams: @dreams })
   end
 
