@@ -1,11 +1,7 @@
-<div class="container">
-  <div class="page-header">
-    <h1>Dreams</h1>
-    <ul class="list-group list-group-flush">
-      <% @dreams.each do |dream| %>
-        <a class="list-group-item list-group-item-action list-group-item-dark"> <%= dream.title %> </a>
-        <%= image_tag(dream.image, width: 300, height: 300, class: "rounded") %>
-      <% end %>
-    </ul>
-  </div>
+<%= render 'categories/group' %>
+
+<div id='dreams_category'>
+  <div id="dreams_pagy"></div>
 </div>
+
+<%= turbo_frame_tag "pagination", src: dreams_path(format: :turbo_stream), loading: :lazy %>

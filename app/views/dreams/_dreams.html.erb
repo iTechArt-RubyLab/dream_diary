@@ -1,0 +1,22 @@
+<div class="row row-cols-1 row-cols-md-5 g-4 pb-4">
+  <% dreams.each do |dream| %>
+    <div class="col">
+      <div class="card h-100">
+        <%= link_to dream_path(dream), class: "card-link" do %>
+          <% if dream.image.attached? %>
+            <%= image_tag dream.image, class: "card-img-top", style: 'max-height:150px;' %>
+          <% else %>
+            <%= image_tag 'default_dream_image.jpg', class: "card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= dream.title %></h5>
+            <p class="card-text"><%= dream.user.name %></p>
+          </div>
+        <% end %>
+        <div class="card-footer">
+          <small class="text-body-secondary"><%= time_ago_in_words(dream.created_at) + t('.ago') %> </small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

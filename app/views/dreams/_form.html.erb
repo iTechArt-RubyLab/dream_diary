@@ -1,0 +1,12 @@
+<%= simple_form_for @dream do |f| %>
+  <div>
+    <%= f.input :date %>
+    <%= f.input :duration, as: :select, collection: (0..24).to_a, selected: 8, prompt: 'Select duration' %>
+    <%= f.association :category %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :image, as: :file, input_html: { accept: User::AVATAR } %>
+    <%= f.input :tags, as: :check_boxes, collection: Tag.pluck(:name), wrapper: :vertical_collection_inline, checked: @dream.tags.pluck(:name) %>
+    <%= f.button :submit %>
+  </div>
+<% end %>

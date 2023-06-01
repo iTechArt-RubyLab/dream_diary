@@ -2,19 +2,31 @@
 <html>
   <head>
     <%= favicon_link_tag 'gif' %>
-    <title> DreamDiary </title>
+    <title> 
+      <% if content_for?(:title) %>
+        <%= yield(:title) %>
+      <% else %>
+        Slumber
+      <% end %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <%= content_tag :body, class: 'container' do %>
-    <%= render 'header' %>
-    <div class="p-3 mb-2 bg-light text-dark bg-gradient">
-      <%= yield %>
+  <%= content_tag :body, class: 'bg-dark-purple' do %>
+  <%= render 'header' %>
+  <div class="container-fluid">
+    <div class="row">
+      <%= render 'moon_phase' %>
+      <div id='dreams' class="col-md-10">
+        <%= yield %>
+      </div>
     </div>
+  </div>
   <% end %>
+  <%= render 'toast' %>
 </html>

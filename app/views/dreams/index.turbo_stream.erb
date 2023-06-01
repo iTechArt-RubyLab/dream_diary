@@ -1,0 +1,10 @@
+<%= turbo_stream.append 'dreams_pagy' do %>
+   <%= render partial: 'dreams/dreams', locals: { dreams: @dreams } %>
+ <% end %>
+<% if @pagy.next.present? %>
+  <%= turbo_stream.replace 'pagination' do %>
+    <%= turbo_frame_tag 'pagination', src: dreams_path(page: @pagy.next, format: :turbo_stream), loading: :lazy %>
+  <% end %>
+<% end %>
+
+

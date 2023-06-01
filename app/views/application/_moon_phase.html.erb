@@ -1,0 +1,16 @@
+<div class="col-md-2">
+  <div class="card text-bg-dark p-3">
+    <div class="card-header">
+      <h5 class="card-title"><%= t(".#{phase_name(@moon_phase_data)}") %></h5>
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-bg-dark"> <%= t('.timezone') + @moon_phase_data[:timezone] %></li>
+        <% @moon_phase_data[:days].first.except(:moonphase_name).each do |key, value| %>
+          <li class="list-group-item text-bg-dark"><%= t(".#{key}") %>: <%= value %></li>
+        <% end %>
+        <%= moon_phase_image_tag(@moon_phase_data) %>
+      </ul>
+    </div>
+  </div>
+</div>

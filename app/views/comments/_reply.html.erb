@@ -1,0 +1,23 @@
+<div class="ms-5">
+  <div class="mb-0 border-top">
+    <div class="card-body position-relative">
+      <div class="row align-items-center mb-2">
+        <div class="col-auto">
+          <%= image_tag reply.user.avatar, class: 'rounded-circle', style: 'width: 50px' %>
+        </div>
+        <div class="col">
+          <h5 class="card-title mb-0"><%= reply.user.name %></h5>
+        </div>
+      </div>
+      <%= turbo_frame_tag "comment_#{reply.id}" do %>
+        <p class="card-text"><%= reply.body %></p>
+        <%= link_to "Edit",
+              edit_dream_comment_path(@dream, reply),
+              class: "btn btn-warning btn-sm" if can? :update, reply %>
+      <% end %>
+      <%= link_to 'Delete', dream_comment_path(@dream, reply), class: "btn btn-danger btn-sm",
+                                                               data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } if can? :destroy, reply %>
+      <small class="text-muted position-absolute bottom-0 end-0 mb-2 me-2"><%= time_ago_in_words(reply.created_at) %> ago</small>
+    </div>
+  </div>
+</div>

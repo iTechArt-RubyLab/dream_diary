@@ -14,3 +14,21 @@ Style/FrozenStringLiteralComment:
 
 Metrics/MethodLength:
   Max: 20
+
+Metrics/AbcSize:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/CaseEquality:
+  Enabled: false
+
+Security/Open:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
