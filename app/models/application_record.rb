@@ -3,6 +3,8 @@ class ApplicationRecord < ActiveRecord::Base
 
   after_destroy :purge_attached_files
 
+  scope :def_includes, -> { includes(:image_blob, :category, :user) }
+
   private
 
   def purge_attached_files

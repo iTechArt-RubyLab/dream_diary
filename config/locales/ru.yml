@@ -111,7 +111,7 @@ ru:
         one: "%{count} день"
         few: "%{count} дня"
         many: "%{count} дней"
-        other: "%{count} дней"
+        other: "%{count} дня"
       x_months:
         one: "%{count} месяц"
         few: "%{count} месяца"
@@ -268,3 +268,36 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  application:
+    header:
+      profile: 'Мой Профиль'
+      log_out: 'Выйти'
+      new_dream: 'Записать сон'
+      login: 'Войти'
+      sign_up: 'Регистрация'
+      lang: 'Язык'
+    search_form:
+      search_dreams: 'Поиск Cнов...'
+      search_date: 'Дата'
+      search_submit: 'Искать'
+    moon_phase:
+      phase: 'Фаза Луны'
+      timezone: 'Зона: '
+      datetime: 'Дата'
+      sunrise: 'Восход Солнца'
+      sunset: 'Закат Солнца'
+      moonphase: 'Фаза'
+      moonrise: 'Восход Луны'
+      moonset: 'Закат Луны'
+      moonphase_name: 'Фаза Луны'
+      first_quarter: 'Первая Четверть'
+      full_moon: 'Полнолуние'
+      last_quarter: 'Последняя Четверть'
+      new_moon: 'Новолуние'
+      waning_crescent: 'Старая Луна'
+      waning_gibbous: 'Убывающая Луна'
+      waxing_crescent: 'Молодая Луна'
+      waxing_gibbous: 'Прибывающая Луна'
+  dreams:
+    dreams:
+      ago: ' назад'
