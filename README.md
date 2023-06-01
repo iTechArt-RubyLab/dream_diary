@@ -31,3 +31,27 @@ Overall, there are many areas where the functionality of the project could be ex
 ## Installation
 
 ### Prerequisites
+
+You need to have installed in your system:
+
+- RVM
+- Ruby 3.1.2
+- Rails ~> 7.0.4, >= 7.0.4.3
+- PostgreSQL
+- Redis
+- Sidekiq
+- Elasticsearch
+
+#### RVN Installation
+
+Install [RVM](http://rvm.io/)
+
+#### Ruby Installation
+
+```
+    rvm install 3.1.2
+```
+
+```
+    rvm use 3.1.2
+```
