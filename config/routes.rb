@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   mount Sidekiq::Web => '/sidekiq'
 
-  root 'dreams#index'
+  root 'dreams#index', defaults: { format: :html }
 
   resources :categories, only: %i[index show]
 
