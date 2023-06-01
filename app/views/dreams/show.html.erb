@@ -13,7 +13,7 @@
         <% end %>
       </div>
       <div class="col-md-8">
-        <div class="bg-dark p-3 mb-4">
+        <div class="p-3 mb-4">
           <%= image_tag @dream.user.avatar, class: 'rounded-circle', style: 'width: 50px' %>
           <div class="d-inline-block">
             <h4 class="mb-0"><%= @dream.user.name %></h4>
@@ -28,10 +28,12 @@
           <% end %>
         <% end %>
         <p class="card-text"><%= @dream.description %></p>
-        <%= link_to 'Edit', edit_dream_path(@dream), class: 'btn btn-secondary me-2' if can? :update, @dream %>
-        <%= link_to (octicon "download", height: 30), dream_path(@dream, format: :csv) %>
       </div>
     </div>
+  </div>
+  <div class='card-footer'>
+    <%= link_to 'Edit', edit_dream_path(@dream), class: 'btn btn-secondary me-2' if can? :update, @dream %>
+    <%= link_to (octicon "download", height: 30), dream_path(@dream, format: :csv) %>
   </div>
 </div>
 
