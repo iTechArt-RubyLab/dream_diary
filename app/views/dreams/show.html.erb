@@ -23,7 +23,7 @@
         </div>
         <h1 class="card-title h4 mb-4"><%= @dream.title %></h1>
         <% @dream.tags.each do |tag| %>
-          <%= link_to search_dreams_path(search: { search: "##{tag.name}"}), data: { turbo_method: :post }, class: 'badge bg-info text-light me-2' do %>
+          <%= link_to search_dreams_path(search: { search: "##{tag.name}"}), data: { turbo_method: :post }, class: 'badge bg-info text-dark me-2' do %>
             <%= tag.name %>
           <% end %>
         <% end %>
