@@ -6,6 +6,14 @@ This is a web application that allows users to keep track of their dreams by rec
 
 ## The Most Challenging Task
 
+The most interesting task in this project was working with the Turbo framework in Rails.
+
+Turbo provides a new approach to building interactive web applications, allowing developers to create web pages with minimal JavaScript and reducing the complexity of building advanced web applications.
+
+In this project, we used Turbo to implement partial page updates without reloading the entire page. With Turbo, we were able to update the contents of a page without requiring the page to reload or writing complex JavaScript code.
+
+## What Could Be Done If More Time Was Available?
+
 If more time was available, there are several additional features and improvements that could be implemented in this project:
 
 - More background jobs could be used to improve performance.
