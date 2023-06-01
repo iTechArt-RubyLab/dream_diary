@@ -6,10 +6,6 @@ This is a web application that allows users to keep track of their dreams by rec
 
 ## The Most Challenging Task
 
-The most challenging task in this project was implementing the search functionality. We had to figure out how to search for dreams based on keyword or tag, and then display the results in a user-friendly way.
-
-## The Most Interesting Task
-
 If more time was available, there are several additional features and improvements that could be implemented in this project:
 
 - More background jobs could be used to improve performance.
