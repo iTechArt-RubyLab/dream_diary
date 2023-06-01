@@ -42,7 +42,7 @@ You need to have installed in your system:
 
 #### RVM Installation
 
-Install [RVM](https://rvm.io/)
+Install [RVM](https://rvm.io/).
 
 #### Ruby Installation
 
@@ -76,7 +76,7 @@ bundle
 
 ### Environment Variables and Keys
 
-Create a `.env` file at the highest level of your app. The easiest way to do this is by typing touch .env into your terminal.
+Create a `.env` file at the highest level of your app. The easiest way to do this is by typing `touch .env` into your terminal.
 
 Add your credentials to the `.env` file.
 
@@ -101,11 +101,13 @@ ADMIN_EMAIL=
 ADMIN_PASSWORD=
 ```
 
-#### Admin variables for seeds
+#### VisualCrossing API
 
 Visit [VisualCrossing API](https://www.visualcrossing.com/weather-api) and add your credentials.
 
-`MOON_KEY=`
+```
+MOON_KEY=
+```
 
 #### Google Cloud Storage
 
@@ -114,7 +116,7 @@ In your google console create a new `.json` key, rename to `gcs.keyfile` and mov
 ### Initialize project database settings
 
 ```
-db:setup
+rails db:setup
 ```
 
 ### Run server
