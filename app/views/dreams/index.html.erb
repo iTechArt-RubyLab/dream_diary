@@ -1,9 +1,7 @@
 <%= render 'categories/group' %>
 
-
-  <div id='dreams_category'>
-    <div id="dreams_pagy"></div>
-  </div>
-
+<div id='dreams_category'>
+  <div id="dreams_pagy"></div>
+</div>
 
 <%= turbo_frame_tag "pagination", src: dreams_path(format: :turbo_stream), loading: :lazy %>

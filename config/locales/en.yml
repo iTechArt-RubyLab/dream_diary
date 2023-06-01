@@ -1,1 +1,26 @@
 en:
+  application:
+    header:
+      profile: 'My Profile'
+      log_out: 'Log Out'
+      new_dream: 'New Dream'
+      login: 'Log In'
+      sign_up: 'Sign Up'
+      lang: 'Language'
+    search_form:
+      search_dreams: 'Search Dreams...'
+      search_date: 'Date'
+      search_submit: 'Search'
+    moon_phase:
+      phase: 'Moon Phase'
+      timezone: 'Timezone: '
+      datetime: 'Date'
+      sunrise: 'Sunrise'
+      sunset: 'Sunset'
+      moonphase: 'Phase'
+      moonrise: 'Moonrise'
+      moonset: 'Moonset'
+      moonphase_name: 'Moon Phase'
+  dreams:
+    dreams:
+      ago: ' ago'
