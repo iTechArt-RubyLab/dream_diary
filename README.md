@@ -1,4 +1,4 @@
 # Slumber
 
-<img src="./public/evil_moon.png" width="200" />
+<img src="./public/evil-moon.png" width="200" />
 
