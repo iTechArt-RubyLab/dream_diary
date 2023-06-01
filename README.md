@@ -36,22 +36,105 @@ You need to have installed in your system:
 
 - RVM
 - Ruby 3.1.2
-- Rails ~> 7.0.4, >= 7.0.4.3
-- PostgreSQL
+- PostgreSQL 15
 - Redis
-- Sidekiq
-- Elasticsearch
+- Elasticsearch 8.7.1
 
-#### RVN Installation
+#### RVM Installation
 
-Install [RVM](http://rvm.io/)
+Install [RVM](https://rvm.io/)
 
 #### Ruby Installation
 
 ```
-    rvm install 3.1.2
+rvm install 3.1.2
 ```
 
 ```
-    rvm use 3.1.2
+rvm use 3.1.2
 ```
+
+#### PostgreSQL Installation
+
+Visit https://www.postgresql.org/download/.
+
+#### Redis Installation
+
+Visit https://redis.io/docs/getting-started/installation/.
+
+#### Elasticsearch Installation
+
+Install [Elasticsearch](https://www.elastic.co/downloads/elasticsearch) 8.7.1.
+
+## Project Setup
+
+Navigate the project folder and run:
+
+```
+bundle
+```
+
+### Environment Variables and Keys
+
+Create a `.env` file at the highest level of your app. The easiest way to do this is by typing touch .env into your terminal.
+
+Add your credentials to the `.env` file.
+
+#### SMTP
+
+```
+SMTP_USER=
+SMTP_PASSWORD=
+```
+
+#### Google OAuth
+
+```
+GOOGLE_ID=
+GOOGLE_SECRET=
+```
+
+#### Admin variables for seeds
+
+```
+ADMIN_EMAIL=
+ADMIN_PASSWORD=
+```
+
+#### Admin variables for seeds
+
+Visit [VisualCrossing API](https://www.visualcrossing.com/weather-api) and add your credentials.
+
+`MOON_KEY=`
+
+#### Google Cloud Storage
+
+In your google console create a new `.json` key, rename to `gcs.keyfile` and move it to the highest level of your app.
+
+### Initialize project database settings
+
+```
+db:setup
+```
+
+### Run server
+
+```
+redis-server
+```
+
+```
+sidekiq
+```
+
+```
+rails s
+```
+
+Or you can use script:
+
+```
+./start.sh
+```
+
+## Profit!!!
