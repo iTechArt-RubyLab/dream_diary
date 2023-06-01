@@ -62,7 +62,7 @@ class DreamsController < ApplicationController
                 Dream.search(search_field, fields: %i[title description date], where: { date: })
               else
                 Dream.search(search_field, fields: %i[title description])
-              end.def_includes
+              end.includes(:image_blob, :category, :user)
     render turbo_stream: turbo_stream.update('dreams', partial: 'dreams', locals: { dreams: @dreams })
   end
 
