@@ -6,6 +6,10 @@ This is a web application that allows users to keep track of their dreams by rec
 
 ## The Most Challenging Task
 
+The most challenging task in this project was implementing the search functionality. I had to figure out how to search for dreams based on keyword or tag, and then display the results in a user-friendly way.
+
+## The Most Interesting Task
+
 The most interesting task in this project was working with the Turbo framework in Rails.
 
 Turbo provides a new approach to building interactive web applications, allowing developers to create web pages with minimal JavaScript and reducing the complexity of building advanced web applications.
