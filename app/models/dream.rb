@@ -12,7 +12,7 @@ class Dream < ApplicationRecord
                                            before: proc { Time.zone.tomorrow } }
   validates :duration, presence: true, numericality: { in: 0..24 }
   validates :title, presence: true, length: { in: 3..50 }
-  validates :description, length: { maximum: 500 }
+  validates :description, length: { maximum: 2500 }
 
   def search_data
     {
