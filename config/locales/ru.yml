@@ -111,7 +111,7 @@ ru:
         one: "%{count} день"
         few: "%{count} дня"
         many: "%{count} дней"
-        other: "%{count} дня"
+        other: "%{count} дней"
       x_months:
         one: "%{count} месяц"
         few: "%{count} месяца"
@@ -301,3 +301,23 @@ ru:
   dreams:
     dreams:
       ago: ' назад'
+  categories:
+    group:
+      travel: 'Путешествия'
+      nature: 'Природа'
+      fantasy: 'Фантазия'
+      travel: 'Путешествия'
+      love: 'Любовь'
+      fears: 'Страхи'
+      friends: 'Друзья'
+      work: 'Работа'
+      family: 'Семья'
+      childhood: 'Детство'
+      physiological_dreams: 'Физиологические сны'
+      spirituality: 'Духовность'
+      nostalgia: 'Ностальгия'
+      adventures: 'Приключения'
+      music: 'Музыка'
+      food: 'Еда'
+      technology: 'Технологии'
+      pets: 'Домашние животные'
