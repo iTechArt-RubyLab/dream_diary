@@ -32,3 +32,6 @@ Security/Open:
 
 Rails/FilePath:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
